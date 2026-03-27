@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Phoenix Strength | Commercial B2B Equipment - QLD Australia</title>
+  <!-- Google Fonts: Modern Sans & Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #05080c;
+      background-image: radial-gradient(circle at 15% 30%, rgba(20, 25, 35, 0.6) 0%, #030507 100%);
+      font-family: 'Inter', sans-serif;
+      color: #eceef2;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f1219;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e25822;
+      border-radius: 8px;
+    }
+
+    /* glass & modern utilities */
+    .glass-card {
+      background: rgba(12, 18, 28, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 40px -16px rgba(0,0,0,0.6);
+      border-color: rgba(226, 88, 34, 0.3);
+    }
+    .gradient-border {
+      position: relative;
+      background: linear-gradient(135deg, #0e1620, #080c12);
+      border-radius: 1.8rem;
+      padding: 1px;
+    }
+    .gradient-border-inner {
+      background: #0b1018;
+      border-radius: 1.8rem;
+      padding: 1.5rem;
+    }
+    .btn-primary {
+      background: linear-gradient(105deg, #e25822 0%, #c2410c 100%);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 18px rgba(226, 88, 34, 0.3);
+      letter-spacing: -0.2px;
+    }
+    .btn-primary:hover {
+      transform: scale(1.02);
+      background: linear-gradient(105deg, #f55c26, #d1440c);
+      box-shadow: 0 12px 24px rgba(226, 88, 34, 0.45);
+    }
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid rgba(226, 88, 34, 0.7);
+      padding: 0.8rem 1.8rem;
+      border-radius: 3rem;
+      font-weight: 500;
+      color: #f0f2f5;
+      transition: all 0.2s;
+    }
+    .btn-outline-light:hover {
+      background: rgba(226, 88, 34, 0.2);
+      border-color: #e25822;
+    }
+
+    h1, h2, h3, .logo-font {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      margin: 5rem 0;
+    }
+
+    /* navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff, #e25822);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #eef2f8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #e25822; }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: rgba(226,88,34,0.2);
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      border-left: 3px solid #e25822;
+    }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .trust-item {
+      background: rgba(255,255,255,0.02);
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 1.4rem;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    /* bento grid for products */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .product-card {
+      background: rgba(10, 16, 24, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      overflow: hidden;
+      transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .product-img {
+      height: 220px;
+      background: linear-gradient(145deg, #1e2a32, #0a111a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #e25822;
+    }
+    .product-details {
+      padding: 1.5rem;
+    }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      background: #0c111c;
+      border-radius: 1.2rem;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+    .pricing-tier {
+      background: #0a0f17;
+      border-radius: 1.2rem;
+      padding: 0.8rem;
+      margin: 1rem 0;
+    }
+    .tier-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+    .badge-stock {
+      background: #0f2e1c;
+      color: #6fdc8c;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+    .pickup-badge {
+      background: #1e2a2f;
+      color: #ffb347;
+    }
+
+    /* why choose us grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+    .feature-item {
+      text-align: center;
+      padding: 1.6rem;
+    }
+    .warehouse-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: linear-gradient(135deg, #0f1622, #070b12);
+      border-radius: 2rem;
+      padding: 2rem;
+      align-items: center;
+    }
+    /* testimonials */
+    .testimonial-slider {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .testi-card {
+      flex: 1;
+      min-width: 260px;
+      background: rgba(12, 18, 28, 0.6);
+      backdrop-filter: blur(8px);
+      padding: 1.6rem;
+      border-radius: 1.8rem;
+    }
+    footer {
+      background: #030609;
+      border-top: 1px solid rgba(226,88,34,0.3);
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    @media (max-width: 800px) {
+      .container { padding: 0 1.2rem; }
+      nav { flex-direction: column; align-items: flex-start; }
+      .hero { flex-direction: column; }
+      .bento-grid { grid-template-columns: 1fr; }
+    }
+    button, .btn-primary, .btn-outline-light { cursor: pointer; font-family: inherit; }
+    .add-quote-btn {
+      width: 100%;
+      background: #1f2937;
+      border: 1px solid #e25822;
+      color: white;
+      padding: 0.8rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .add-quote-btn:hover {
+      background: #e25822;
+      border-color: #e25822;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    [data-aos] { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .aos-animate { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ====================== NAVBAR ====================== -->
+<nav class="container">
+  <div class="logo"><i class="fas fa-dumbbell" style="color:#e25822; margin-right: 8px;"></i>PHOENIX STRENGTH</div>
+  <div class="nav-links">
+    <a href="#">Equipment</a>
+    <a href="#">Commercial</a>
+    <a href="#">Warehouse</a>
+    <a href="#">Contact</a>
+    <a href="#"><i class="fas fa-user"></i> Login</a>
+    <button class="btn-outline-light" style="padding: 0.5rem 1.2rem;">B2B Pricing <i class="fas fa-chart-line"></i></button>
+  </div>
+</nav>
+
+<main class="container">
+  <!-- ====================== HERO SECTION ====================== -->
+  <section>
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-fire"></i> Australian Commercial Grade</div>
+        <h1 style="font-size: 3.2rem; margin: 1rem 0 0.5rem;">Heavy-Duty <span style="color:#e25822;">Strength Equipment</span> for Box Gyms & Clubs</h1>
+        <p style="font-size: 1.2rem; opacity: 0.8; max-width: 550px;">Built in QLD, ready for 48hr pickup. Engineered to withstand the toughest commercial environments.</p>
+        <div style="margin: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn-primary" onclick="alert('Request a B2B quote — Phoenix Strength sales team will contact you.')">Request Quote <i class="fas fa-arrow-right"></i></button>
+          <button class="btn-outline-light" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});">View Commercial Rigs</button>
+        </div>
+      </div>
+      <div style="flex:1; text-align: center;">
+        <div class="glass-card" style="padding: 2rem;">
+          <i class="fas fa-truck-fast" style="font-size: 3rem; color:#e25822;"></i>
+          <h3>Same‑week dispatch</h3>
+          <p>from Brisbane warehouse</p>
+          <div style="background:#e25822; width: 60px; height: 3px; margin: 1rem auto;"></div>
+          <p><strong>Over 200+ gyms equipped</strong> across Australia & NZ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TRUST BADGES ====================== -->
+  <div class="trust-row">
+    <div class="trust-item"><i class="fas fa-check-circle" style="color:#e25822;"></i> In Stock – QLD Warehouse</div>
+    <div class="trust-item"><i class="fas fa-clock"></i> 48hr Pickup Available</div>
+    <div class="trust-item"><i class="fas fa-award"></i> 5-Year Frame Warranty</div>
+    <div class="trust-item"><i class="fas fa-tools"></i> Commercial Grade IPF Spec</div>
+  </div>
+
+  <!-- ====================== FEATURED PRODUCTS (BENTO GRID) ====================== -->
+  <section id="products">
+    <h2 class="section-title">⚡ Commercial Series <span style="color:#e25822;">| Bento Collection</span></h2>
+    <div class="bento-grid" id="productGrid"></div>
+  </section>
+
+  <!-- ====================== WHY CHOOSE US ====================== -->
+  <section>
+    <div class="glass-card" style="padding: 2rem;">
+      <h2 class="section-title" style="margin-bottom: 0.5rem;">Why commercial buyers choose Phoenix</h2>
+      <div class="features-grid">
+        <div class="feature-item"><i class="fas fa-warehouse" style="font-size: 2.5rem; color:#e25822;"></i><h3>Local Stock, No Delays</h3><p>Brisbane-based warehouse, fast dispatch to any state.</p></div>
+        <div class="feature-item"><i class="fas fa-chart-line" style="font-size: 2.5rem; color:#e25822;"></i><h3>Tiered B2B Discounts</h3><p>Retail, Silver (3+ units), Gold (10+ units) pricing.</p></div>
+        <div class="feature-item"><i class="fas fa-drafting-compass" style="font-size: 2.5rem; color:#e25822;"></i><h3>Commercial R&D</h3><p>Engineered for 24/7 high-traffic gym floors.</p></div>
+        <div class="feature-item"><i class="fas fa-handshake" style="font-size: 2.5rem; color:#e25822;"></i><h3>Dedicated Account Manager</h3><p>White glove service for bulk orders.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== WAREHOUSE & LOCAL AVAILABILITY ====================== -->
+  <section>
+    <div class="warehouse-showcase">
+      <div style="flex:1"><i class="fas fa-map-marker-alt" style="font-size: 3rem; color:#e25822; margin-bottom: 0.5rem; display: inline-block;"></i><h2>Sunshine Coast Warehouse Hub</h2><p>85% of orders shipped within 24h. Visit our QLD showroom by appointment — inspect commercial racks, benches and dumbbells before purchase.</p><button class="btn-outline-light" style="margin-top: 1rem;" onclick="alert('Book a warehouse tour — contact B2B@phoenixstrength.com.au')"><i class="fas fa-calendar-alt"></i> Schedule Visit</button></div>
+      <div style="flex:1; background: #0b111c; border-radius: 1.5rem; padding: 1rem; text-align: center;"><i class="fas fa-boxes" style="font-size: 2.8rem; opacity: 0.7;"></i><p><strong>Over $2.5M AUD inventory</strong> ready for commercial orders</p><div class="badge-stock" style="background:#1f3a2c;">✔️ 48hr pickup guarantee</div></div>
+    </div>
+  </section>
+
+  <!-- ====================== TESTIMONIALS ====================== -->
+  <section>
+    <h2 class="section-title">Trusted by Australian gym owners</h2>
+    <div class="testimonial-slider">
+      <div class="testi-card"><i class="fas fa-star" style="color:#e25822;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Phoenix Strength delivered 12 power racks within 3 days. Commercial tier pricing saved us 22%."</p><strong>- Liam, Iron Legion Gym (Sydney)</strong></div>
+      <div class="testi-card"><i class="fas fa-star" style="color:#e25822;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"QLD warehouse pickup in 48hr — no freight damage, unbeatable commercial support."</p><strong>- Sarah, CrossFit Brisbane</strong></div>
+      <div class="testi-card"><i class="fas fa-star" style="color:#e25822;"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><p>"Gold tier pricing & local stock = massive win for our chain expansion."</p><strong>- Michael, Fitness Alliance AU</strong></div>
+    </div>
+  </section>
+
+  <!-- ====================== CTA BULK ORDERS ====================== -->
+  <section>
+    <div class="gradient-border">
+      <div class="gradient-border-inner" style="text-align: center;">
+        <h2 style="font-size: 2rem;">Need a fleet of equipment?</h2>
+        <p style="margin: 1rem 0;">Volume discounts, custom branding, and end-to-end installation support for commercial projects.</p>
+        <button class="btn-primary" onclick="alert('Request bulk quote: Phoenix Strength B2B team will respond within 2 hours.')"><i class="fas fa-file-invoice"></i> Request Bulk Quote</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ====================== FOOTER ====================== -->
+<footer>
+  <div class="container footer-grid">
+    <div><i class="fas fa-dumbbell" style="font-size: 1.8rem; color:#e25822;"></i><p style="margin-top: 10px;">Phoenix Strength<br/>Commercial B2B Division<br/>Brisbane, QLD 4101, Australia</p></div>
+    <div><h4>Quick Links</h4><p>Commercial Rigs<br/>B2B Pricing Application<br/>Warehouse Tour<br/>Support Portal</p></div>
+    <div><h4>Contact</h4><p>📞 1300 555 782<br/>✉️ b2b@phoenixstrength.com.au<br/>🕒 Mon-Fri 8am-5pm AEST</p><div style="display: flex; gap: 1rem; margin-top: 0.8rem;"><i class="fab fa-instagram"></i><i class="fab fa-linkedin"></i><i class="fab fa-facebook"></i></div></div>
+    <div><p>© 2025 Phoenix Strength — Australian Commercial Fitness Equipment</p><div class="badge-stock pickup-badge">🇦🇺 Made for Australian gyms</div></div>
+  </div>
+</footer>
+
+<script>
+  // DUMMY PRODUCT DATA (3 products)
+  const products = [
+    {
+      id: 1,
+      name: "Commercial Power Rack",
+      icon: "fas fa-dumbbell",
+      specs: { "Steel gauge": "11-gauge 3x3", "Weight capacity": "1000kg", "Pull-up bar": "Multi-grip", "J-cups": "TPU lined" },
+      pricing: { "Retail (1 unit)": "$2,499 AUD", "Silver (3-5 units)": "$2,099 AUD", "Gold (10+ units)": "$1,799 AUD" },
+      stock: "In Stock - QLD Warehouse",
+      pickup: "48hr Pickup Available"
+    },
+    {
+      id: 2,
+      name: "Olympic Bench Press (Comp HD)",
+      icon: "fas fa-weight-hanging",
+      specs: { "Frame": "4mm steel", "Pad Thickness": "70mm competition", "Weight cap": "450kg", "Adjustments": "3 incline positions" },
+      pricing: { "Retail (1 unit)": "$1,199 AUD", "Silver (3-5 units)": "$999 AUD", "Gold (10+ units)": "$849 AUD" },
+      stock: "In Stock - QLD Warehouse",
+      pickup: "48hr Pickup Available"
+    },
+    {
+      id: 3,
+      name: "Adjustable Dumbbells Set (5-50kg)",
+      icon: "fas fa-tachometer-alt",
+      specs: { "Material": "Cast iron + urethane", "Increments": "5kg steps", "Grip": "Knurled steel", "Stand": "Heavy-duty cradle" },
+      pricing: { "Retail (pair)": "$1,649 AUD", "Silver (3+ pairs)": "$1,399 AUD", "Gold (10+ pairs)": "$1,199 AUD" },
+      stock: "In Stock - QLD Warehouse",
+      pickup: "48hr Pickup Available"
+    }
+  ];
+
+  function renderProducts() {
+    const grid = document.getElementById('productGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    products.forEach(prod => {
+      const productCard = document.createElement('div');
+      productCard.className = 'product-card glass-card';
+      productCard.innerHTML = `
+        <div class="product-img"><i class="${prod.icon}" style="font-size: 4rem;"></i></div>
+        <div class="product-details">
+          <h3 style="font-size: 1.8rem;">${prod.name}</h3>
+          <div class="spec-grid">
+            ${Object.entries(prod.specs).map(([k,v]) => `<div class="spec-item"><span>${k}</span><strong>${v}</strong></div>`).join('')}
+          </div>
+          <div class="pricing-tier">
+            <div style="font-weight:600; margin-bottom:0.5rem;"><i class="fas fa-tags"></i> Tiered B2B Pricing</div>
+            ${Object.entries(prod.pricing).map(([tier,price]) => `<div class="tier-row"><span>${tier}</span><span style="color:#e25822; font-weight:600;">${price}</span></div>`).join('')}
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.5rem 0;">
+            <span class="badge-stock"><i class="fas fa-check-circle"></i> ${prod.stock}</span>
+            <span class="badge-stock pickup-badge"><i class="fas fa-truck"></i> ${prod.pickup}</span>
+          </div>
+          <button class="add-quote-btn" data-product="${prod.name}"><i class="fas fa-file-signature"></i> Add to Quote List (B2B)</button>
+        </div>
+      `;
+      grid.appendChild(productCard);
+    });
+    // attach event listeners for all quote buttons
+    document.querySelectorAll('.add-quote-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const productName = btn.getAttribute('data-product') || 'product';
+        alert(`✅ Quote request initiated for ${productName}\nA Phoenix Strength B2B specialist will respond within 4 business hours with tiered pricing & availability.`);
+      });
+    });
+  }
+
+  // Scroll animations observer (simple)
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.glass-card, .product-card, .warehouse-showcase, .testi-card, .features-grid .feature-item, .section-title');
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (rect.top < windowHeight - 100) {
+        el.classList.add('aos-animate');
+      } else {
+        // optional: remove class if you want reset, but we keep added once for performance
+        if(!el.classList.contains('aos-animate')) el.classList.add('aos-animate');
+      }
+    });
+  };
+  // set default styles for animation base
+  document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    const animatedElements = document.querySelectorAll('.glass-card, .product-card, .warehouse-showcase, .testi-card, .features-grid .feature-item, .section-title');
+    animatedElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.5s ease';
+    });
+    window.addEventListener('scroll', () => {
+      animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    });
+    window.dispatchEvent(new Event('scroll'));
+    // smooth scroll for any anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId && targetId !== '#') {
+          const targetElem = document.querySelector(targetId);
+          if(targetElem) {
+            e.preventDefault();
+            targetElem.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Additional micro-interactions: hover glows + ensure responsiveness -->
+<style>
+  .product-card:hover .product-img i {
+    transform: scale(1.05);
+    transition: 0.2s;
+  }
+  .product-img i { transition: transform 0.2s; }
+  .btn-primary, .btn-outline-light, .add-quote-btn { transition: all 0.2s; }
+  .trust-item i { margin-right: 8px; }
+  .feature-item i { margin-bottom: 12px; display: inline-block; }
+  .warehouse-showcase { border: 1px solid rgba(226,88,34,0.2); background: radial-gradient(ellipse at 30% 40%, #111a24, #03060b); }
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  section, .bento-grid > * { animation: fadeSlideUp 0.5s ease-out forwards; animation-fill-mode: both; }
+  section:nth-child(1) { animation-delay: 0.05s; }
+  .bento-grid .product-card:nth-child(1) { animation-delay: 0.1s; }
+  .bento-grid .product-card:nth-child(2) { animation-delay: 0.2s; }
+  .bento-grid .product-card:nth-child(3) { animation-delay: 0.3s; }
+</style>
+</body>
+</html>
